@@ -15,6 +15,9 @@ class uuid extends \p2made\helpers\Uuid
 
     public static function uuid2bin($uuid)
     {
+        if (is_null($uuid)) {
+            return null;
+        }
         return pack("h*", str_replace('-', '', $uuid));
     }
 
