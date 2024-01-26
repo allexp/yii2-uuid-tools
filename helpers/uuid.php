@@ -23,6 +23,9 @@ class uuid extends \p2made\helpers\Uuid
 
     public static function bin2uuid($bin)
     {
+        if (is_null($uuid)) {
+            return null;
+        }
         $uuid = unpack("h*", $bin);
         $uuid = preg_replace("/([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})/", "$1-$2-$3-$4-$5", $uuid);
         $uuid = array_merge($uuid);
