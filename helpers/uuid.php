@@ -23,7 +23,7 @@ class uuid extends \p2made\helpers\Uuid
 
     public static function bin2uuid($bin)
     {
-        if (is_null($uuid)) {
+        if (is_null($bin)) {
             return null;
         }
         $uuid = unpack("h*", $bin);
